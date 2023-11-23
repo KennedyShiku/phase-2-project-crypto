@@ -33,7 +33,7 @@ const HomePage = () => {
       </div>
       {showSignUp && <SignUp />}
       <CoinList />
-      <Blog />
+      
     </div>
   );
 }

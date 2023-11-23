@@ -10,12 +10,12 @@ const Navbar = () => {
       </div>
       <div className="navigation">
         <a href='/'>Home</a>
-        <a href='/'>Wallet</a>
-        <a href='/'>Blog</a>
-        <a href='/'>Sign Up</a>
+        <a href='/wallet'>Wallet</a>
+        <a href='/blog'>Blog</a>
+        <a href='/signup'>Sign Up</a>
       </div>
       <div className='searchbar'>
-        <input type="text" name="text" placeholder="Search for a coin" className="input"></input>
+        <input type="text" name="text" placeholder="Search for a coin" className="input-bar"></input>
       </div>
     </div>
   );

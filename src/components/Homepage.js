@@ -2,15 +2,22 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import CoinList from './CoinList';
-import Blog from './Blog';
 import SignUp from './SignUp';
+// import Wallet from './Wallet';
 
 
 const HomePage = () => {
   const [showSignUp, setShowSignUp] = useState(false);
+  const [walletCoins, setWalletCoins] = useState([]);
 
   const handleGetStartedClick = () => {
     setShowSignUp(true);
+  };
+
+  const handleBuyCoin = (selectedCoin) => {
+    console.log('Selected coin: ', selectedCoin);
+    setWalletCoins((prevCoins) => [...prevCoins, selectedCoin]);
+    console.log('Wallet coins: ', walletCoins);
   };
 
   return (
@@ -32,8 +39,8 @@ const HomePage = () => {
         </div>
       </div>
       {showSignUp && <SignUp />}
-      <CoinList />
-      
+      <CoinList onBuyCoin={handleBuyCoin}/>
+      {/* <Wallet selectedCoins={walletCoins}/> */}
     </div>
   );
 }

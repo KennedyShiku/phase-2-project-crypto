@@ -1,23 +1,24 @@
-import React from "react";
+import React from 'react';
 
-function CryptoWallet({name, amount, imagesrc}){
-
-    return(
-        <React.Fragment>
-            <div>
-                <img src={imagesrc} alt="Picture Unavailable" />
-                <h1>{name}</h1>
-                <h2>Amount: {amount}</h2>
+const Wallet = ({ selectedCoins = [] }) => {
+  return (
+    <React.Fragment>
+      <h2>Wallet</h2>
+      {selectedCoins && selectedCoins.length > 0 ? (
+        <div className="wallet-coins">
+          {selectedCoins.map((coin) => (
+            <div className="wallet-coin" key={coin.id}>
+              <h3>{coin.name}</h3>
+              <img src={coin.image} alt={coin.name} />
+              <p>Price in USD: {coin.price}</p>
             </div>
-            <div className="post">
-             <h3>latest Post</h3> 
-             <p>Title: My Crypto Update</p>             
-             <p>Posted on: {new Date().toLocaleString()}</p>
-            </div>
-
-        </React.Fragment>
-    );
+          ))}
+        </div>
+      ) : (
+        <p>No coins in the wallet</p>
+      )}
+    </React.Fragment>
+  );
 }
 
-
-export default CryptoWallet;
+export default Wallet;

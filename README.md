@@ -26,8 +26,9 @@ To run The Crypto App, no specific requirements are needed. Users can choose to 
 For local installation:
 
 1. Clone the repository:
-```bash
+
 git clone [repository-url]
+
 Use code with caution. Learn more
 
     Navigate to the project directory:
